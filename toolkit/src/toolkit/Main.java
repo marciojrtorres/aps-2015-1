@@ -1,15 +1,63 @@
 package toolkit;
 
 import static toolkit.Calc.*;
+import static toolkit.StringUtil.eq;
+import static toolkit.StringUtil.strip;
+import static toolkit.StringUtil.upcase;
+import static toolkit.StringUtil.downcase;
+import static toolkit.StringUtil.capitalize;
+import static java.lang.System.out;
 
 public class Main {
+  public static void jogo(Dado d) {
+    d.jogar();
+    System.out.println(d.getValor());
+  }
+
   public static void main(String[] args) {
 
-    System.out.println(StringUtil.eq("abc", "abc") == true);
-    System.out.println(StringUtil.eq("abc", "abc ") == false);
-    System.out.println(StringUtil.eq("xyz", "qqq") == false);
-    System.out.println(StringUtil.eq("xyzmno", "") == false);
-    System.out.println(StringUtil.eq("", "") == true);
+    // Padrão de Projeto
+    // Motivação: permitir a
+    // definição de um corpo comum de um
+    // algoritmo (jogar) deixando ganchos
+    // para a parte variável do algoritmo (faces)
+
+    // Template Method
+    Dado d = new Dado18Faces();
+    jogo(d);
+    jogo(new Dado6Faces());
+    jogo(new Dado2de6Faces());
+
+    //Dado6Faces d1 = new Dado(); // falha
+    //Object d2 = new Dado();
+    //Object d3 = new Dado6Faces();
+
+
+    // jogar é um comando, não consulta o estado
+    // Princípio Separação Comando/Consulta
+    //d.jogar(); // randomizar a face
+    //int n = d.getValor(); // consultar
+    //System.out.println(n);
+
+
+
+
+
+
+    /*
+    System.out.println(eq(upcase(" a1b#c% "), " A1B#C% "));
+    System.out.println(eq(downcase(" A1B#C% "), " a1b#c% "));
+    out.println(eq(capitalize("um texto"), "Um texto"));
+    out.println(eq(capitalize("texto um"), "Texto um"));
+    out.println(eq(capitalize("TEXTO UM"), "Texto um"));
+    out.println(eq(capitalize("1texto um"), "1texto um"));
+    out.println(eq(capitalize("1TEXTO UM"), "1texto um"));
+    // out.println(eq(capitalize(""), ""));
+
+    // refatoração:
+    // alterações que
+    // melhoram a qualidade interna
+    // não altera, geralmente, a API
 
 
     // String texto = "programador";
@@ -38,9 +86,12 @@ public class Main {
     // System.out.println(c); // Tabela: ASC II
     // System.out.println((char) ('a' + 10));
     // System.out.println('a' - 'A');
+    */
   }
+
 }
 
 // javac -cp bin -d bin src/toolkit/Main.java
 // cp:classpath:caminho das classes
 // d:destination:destino
+
