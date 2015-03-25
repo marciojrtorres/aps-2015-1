@@ -26,7 +26,7 @@ public class Main {
     Dado d = new Dado18Faces();
     jogo(d);
     jogo(new Dado6Faces());
-    jogo(new Dado2de6Faces());
+    // jogo(new Dado2de6Faces());
 
     //Dado6Faces d1 = new Dado(); // falha
     //Object d2 = new Dado();

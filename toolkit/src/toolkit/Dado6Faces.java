@@ -1,9 +1,9 @@
 package toolkit;
 
-public class Dado6Faces extends Dado {
+public class Dado6Faces extends DadoAbstrato {
 
   @Override
-  protected int getFaces() {
+  public int getFaces() {
     return 6;
   }
 
