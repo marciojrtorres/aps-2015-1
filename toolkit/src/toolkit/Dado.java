@@ -4,8 +4,8 @@ public interface Dado {
 
   public void jogar();
 
-  public int getValor();
+  public int  getValor();
 
-  public int getFaces();
+  public int  getFaces();
 
 }

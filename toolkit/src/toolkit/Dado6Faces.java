@@ -7,4 +7,6 @@ public class Dado6Faces extends DadoAbstrato {
     return 6;
   }
 
+  public int t() { return 1; }
+
 }

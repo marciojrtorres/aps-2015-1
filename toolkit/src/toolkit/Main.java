@@ -8,6 +8,7 @@ import static toolkit.StringUtil.downcase;
 import static toolkit.StringUtil.capitalize;
 import static java.lang.System.out;
 
+
 public class Main {
   public static void jogo(Dado d) {
     d.jogar();
@@ -23,9 +24,12 @@ public class Main {
     // para a parte variável do algoritmo (faces)
 
     // Template Method
+
     Dado d = new Dado18Faces();
     jogo(d);
     jogo(new Dado6Faces());
+
+
     // jogo(new Dado2de6Faces());
 
     //Dado6Faces d1 = new Dado(); // falha
