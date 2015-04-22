@@ -4,10 +4,12 @@ public class Personagem {
 
   private String nome;
   private int energia;
+  private Ataque ataque;
 
-  public Personagem(String nome, int energia) {
+  public Personagem(String nome, int energia, Ataque ataque) {
     this.nome = nome;
     this.energia = energia;
+    this.ataque = ataque;
   }
 
   public String getNome() {
@@ -23,13 +25,7 @@ public class Personagem {
   }
 
   public void ataca(Personagem outro) {
-    System.out.println(this.getNome() + " ataca "
-      + outro.getNome() + " com "
-      + "machado");
-    outro.setEnergia(outro.getEnergia() - 10);
-    if (outro.getEnergia() <= 0) {
-      System.out.println(outro.getNome() + " esta morto");
-    }
+    if (ataque != null) ataque.ataca(this, outro);
   }
 
   public boolean equals(Personagem outro) {

@@ -13,7 +13,7 @@ public class GameSimulador {
       Personagem um = pegaUmPersonagemVivo();
       Personagem outro = pegaOutroPersonagemVivoExceto(um);
       um.ataca(outro);
-      try { Thread.sleep(200); } catch (Exception e) {}
+      try { Thread.sleep(100); } catch (Exception e) {}
     }
   }
 
