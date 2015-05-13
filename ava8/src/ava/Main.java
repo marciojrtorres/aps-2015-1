@@ -16,8 +16,8 @@ public class Main {
 
         System.out.println(f.getValorFinanciado() == 10000.0);
 
-        f.setTipo("convencional2014");
-
+        f.setTipo("+lucrobanco");
+        // CTRL + CLIQUE = IR PARA
         f.calcula(24); // parcelas
 
         System.out.println(f.getValorTarifaAberturaCredito()); // 200.0
