@@ -1,16 +1,15 @@
 package observer2;
 
+
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
-		Usuario usuario = new Usuario();
-		
-		Form f = new Form(usuario);
+		FormAdicionaContato f = new FormAdicionaContato();
 		
 		f.open();
 		
-		Display d = new Display(usuario);
+		FormListaContatos d = new FormListaContatos();
 		
 		d.open();
 	}
