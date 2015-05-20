@@ -32,6 +32,7 @@ public class Main {
 			// executa
 			instrucao.execute(delete);
 			
+			// fecha conexao
 			conexao.close();
 			
 			System.out.println("IT'S WORKS!!!");
