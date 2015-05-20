@@ -1,44 +1,42 @@
 package agenda;
 
-import java.sql.*;
-import javax.sql.*;
-
 public class Main {
 
 	public static void main(String[] args) {
+		// lidar com fonte de dados
+		// costuma-se abstrair: existem Padrões de Arquitetura
+		// Banco: agenda
+		// Tabela: contatos
+		// Abstrair a conexão e manipulação do banco: DAO
+		// Mapeamento Objeto/Relacional
+		// ORM (Object Relational Mapping)
 		
-		try {
-			// todas as interfaces e classes tem de ser to java.jdbc
+		// SCHEMA FIRST OU MODEL FIRST
+		
+		Contato alex = new Contato();
+		alex.setNome("Alex");
+		alex.setSobrenome("Mirapalheta");
+		alex.setTelefone("88665522");
+		
+		// contato antes de ser persistido
+		System.out.println(alex);
+		
+		ContatoDAO dao = new ContatoDAO();
+		// método que faz a inserção
+		// opções de nomes:
+		// dao.save(alex);
+		dao.insert(alex);
+		// dao.persist(alex);
+		// dao.create(alex);
+		
+		// contato depois de ser persistido
+		System.out.println(alex);		
+		
+		
+		
+		
+		
 
-			String user = "root";
-			String password = "root";
-			// caminho do banco
-			String url = "jdbc:mysql://localhost/agenda";
-			// outro exemplo
-			// String url = "jdbc:mysql://192.168.2.87/rh";
-			
-			// abrir a conexao
-			Connection conexao = 
-					DriverManager.getConnection(url, user, password);
-			
-			// comando
-			String insert = "INSERT INTO contatos (nome, telefone) "
-					      + "VALUES ('Vinicius', '32324455')";
-					
-			String delete = "DELETE FROM contatos WHERE id_contato = 2";
-			// instrucao
-			Statement instrucao = conexao.createStatement();
-			
-			// executa
-			instrucao.execute(delete);
-			
-			// fecha conexao
-			conexao.close();
-			
-			System.out.println("IT'S WORKS!!!");
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}	
 	}
+
 }
