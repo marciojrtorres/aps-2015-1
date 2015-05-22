@@ -1,5 +1,7 @@
 package agenda;
 
+import java.util.List;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -32,7 +34,23 @@ public class Main {
 		// contato depois de ser persistido
 		System.out.println(alex);		
 		
+		// API da busca:
+		List<Contato> contatos = dao.select();
+		// dao.findAll();
+		// dao.busca();
+		// dao.search();
+		// dao.readAll();
+		for (Contato c : contatos) {
+			System.out.println(c);
+		}
 		
+		Contato teste = contatos.get(0);
+		
+		teste.setTelefone("32445522");
+		
+		dao.update(teste);
+		
+		dao.delete(contatos.get(1));
 		
 		
 		
