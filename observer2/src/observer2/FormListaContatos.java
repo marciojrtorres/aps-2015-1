@@ -3,6 +3,8 @@ package observer2;
 import javax.swing.*;
 
 public class FormListaContatos extends JFrame {
+	
+	private ContatoDAO dao = ContatoDAO.getInstance();
 
 	private JTextArea textArea = new JTextArea();
 

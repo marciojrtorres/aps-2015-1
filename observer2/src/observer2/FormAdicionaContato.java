@@ -8,6 +8,8 @@ import javax.swing.*;
 
 public class FormAdicionaContato extends JFrame implements ActionListener {
 	
+	
+	
 	private JTextField nomeTextField = new JTextField(20);
 	private JTextField telefoneTextField = new JTextField(10);
 	
@@ -40,6 +42,7 @@ public class FormAdicionaContato extends JFrame implements ActionListener {
 		Contato contato = new Contato();	
 		contato.setNome(nomeTextField.getText());
 		contato.setTelefone(telefoneTextField.getText());
-		System.out.println(contato);
+		
+		ContatoDAO.getInstance().insert(contato);
 	}
 }
