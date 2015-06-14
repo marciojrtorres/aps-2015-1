@@ -1,0 +1,18 @@
+Testes Unitários
+================
+
+Teste unitário é realizado sobre uma pequena parte INDEPENDENTE do software. 
+Alguns dizem que se testa um módulo (uma sub-rotina, um método, uma classe).
+Em Orientação a Objetos, um módulo == uma classe.
+
+System.out.print(lista.length() == 0); // assertiva (deve dar true)
+
+Assertivas são um meio de testar. Mas existem bibliotecas específicas
+para construir testes unitários em qualquer linguagem.
+
+Para Java, a mais popular é o JUnit, mas existem outras, por exemplo TestNG.
+
+Vamos usar o JUnit. É o padrão da "indústria". Ele é tão popular
+que foi portado para várias linguagens, 
+por isso chamados de xUnit (ex. RUnit, PHPUnit, NUnit, etc).
+
