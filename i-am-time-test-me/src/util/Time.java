@@ -10,7 +10,7 @@ public class Time {
 		this.segundos = s;
 	}
 
-	public String toString() {
+	public String toString() {		
 		return (horas < 10 ? "0" + horas : horas) 
 			+ ":"
 			+ (minutos < 10 ? "0" + minutos : minutos)
@@ -25,6 +25,9 @@ public class Time {
 	}
 
 	public Time(int h) {
+		if (h < 0) {
+			throw new InvalidTimeException("Hora negativa recebida " + h + ", esperado um numero positivo");
+		}
 		this.horas = h % 24;
 		this.minutos = 0;
 		this.segundos = 0;
